@@ -21,7 +21,7 @@
             if (!empty($genres))
             foreach ($genres as $genre)
             {
-                echo (string)$genre;
+                echo $genre->gen_libelle;
             }
             
 
