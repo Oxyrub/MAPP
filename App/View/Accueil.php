@@ -21,7 +21,7 @@
             if (!empty($genres))
             foreach ($genres as $genre)
             {
-                echo $genre;
+                echo (string)$genre;
             }
             
 
