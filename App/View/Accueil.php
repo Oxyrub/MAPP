@@ -9,7 +9,7 @@ try
         
     $city = $result->fetchAll(PDO::FETCH_OBJ);
     $db = null;
-    if (!empty($city)) return json_encode($city);
+    if (!empty($city)) echo json_encode($city);
     echo json_last_error_msg();
 
 } catch (PDOException $e) {
