@@ -18,7 +18,12 @@
                 
             $genres = $result->fetchAll(PDO::FETCH_OBJ);
             $db = null;
-            if (!empty($genres)) echo $genres;
+            if (!empty($genres))
+            foreach ($genre as $genres)
+            {
+                echo $genre;
+            }
+            
 
         } catch (PDOException $e) {
             var_dump($e);
