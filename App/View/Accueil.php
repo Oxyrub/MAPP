@@ -19,7 +19,7 @@
             $genres = $result->fetchAll(PDO::FETCH_OBJ);
             $db = null;
             if (!empty($genres))
-            foreach ($genre as $genres)
+            foreach ($genres as $genre)
             {
                 echo $genre;
             }
