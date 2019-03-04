@@ -18,7 +18,7 @@
                 
             $genres = $result->fetchAll(PDO::FETCH_OBJ);
             $db = null;
-            if (!empty($city)) echo $genres;
+            if (!empty($genres)) echo $genres;
 
         } catch (PDOException $e) {
             var_dump($e);
