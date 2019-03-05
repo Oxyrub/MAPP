@@ -7,7 +7,7 @@ class FirstTest extends TestCase
 {
     public function testTrueAssetsToTrue()
     {
-        $condition = true;
+        $condition = false;
         $this->assertTrue($condition);
     }
 }
