@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php" colors = "true" verbose="true" stopOnFailute="true">
+<phpunit 
+bootstrap="vendor/autoload.php" 
+colors = "true" 
+verbose="true" s
+topOnFailute="true"
+convertErrorsToExceptions="true"
+convertNoticesToExceptions="true"
+convertWarningsToExceptions="true">
     <testsuites>
         <testsuite name="Application Test Suite">
             <directory>UnitTests/Test/</directory>
