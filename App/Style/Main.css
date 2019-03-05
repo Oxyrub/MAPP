@@ -1,3 +1,10 @@
+.bodyBg{
+    background-image: url('../Images/MusicIntegContinue2.jpg');
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .header_banner {
     margin-top: 3em;
     margin-bottom: 5em;
@@ -5,8 +12,24 @@
 
 .header_title{
     text-align: center;
+    color: white;
 }
 
-.btn_profile {
-    
+.designForm {
+    color: black;
+}
+
+.connexZone{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border-right: 1px solid black; 
+}
+
+.inscZone{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
 }
