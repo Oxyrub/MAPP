@@ -118,13 +118,13 @@ ADD CONSTRAINT FOREIGN KEY FK_album_artiste (alb_art) REFERENCES artistes(art_id
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `uti_id` int NOT NULL AUTO_INCREMENT ,
-  `uti_nom` varchar(30) NOT NULL ,
-  `uti_adr` varchar(50) NOT NULL ,
-  `uti_cps` varchar(5) NOT NULL ,
-  `uti_ville` varchar(30) NOT NULL ,
+  `uti_id` int NOT NULL AUTO_INCREMENT ,  
   `uti_email` varchar(50) NOT NULL ,
   `uti_dnai` date NOT NULL,
+  `uti_password` varchar(50) NOT NULL,
+  `uti_username` varchar(50) NOT NULL,
+  `uti_nationality` varchar(50) NULL,
+  `uti_phone` varchar(15) NULL,
   PRIMARY KEY (`uti_id`)
 );
 
@@ -132,10 +132,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO utilisateur(`uti_id`, `uti_nom`, `uti_adr`, `uti_cps`, `uti_ville`, `uti_email`, `uti_dnai`) VALUES
-(1, 'Campan Bernard', '17 rue de la république', '75001', 'Paris', 'bernard.campan@mondomaine.fr', '1958-04-04'),
-(2, 'Bourdon, Didier', '63 place de la comédie', '06000', 'Nice', 'didier.bourdon@mondomaine.fr', '1959-01-22'),
-(3, 'Legitimus, Pascal', '127 route de la plage', '33680', 'Lacanau', 'pascal.legitimus@mondomaine.fr', '1959-03-13');
+INSERT INTO utilisateur(`uti_id`, `uti_email`, `uti_dnai`, `uti_password`, `uti_username`, `uti_nationality`, `uti_phone`) VALUES
+(1, 'bernard.campan@mondomaine.fr', '1958-04-04', 'mdpcampan', 'Campan Bernard', 'Française', '0655555555'),
+(2, 'didier.bourdon@mondomaine.fr', '1959-01-22', 'mdpbourdon', 'Bourdon, Didier', 'Française', '0699999999'),
+(3, 'pascal.legitimus@mondomaine.fr', '1959-03-13', 'mdplegitimus','Legitimus, Pascal', 'Française', '0633333333');
 
 
 DROP TABLE IF EXISTS `favoris`;

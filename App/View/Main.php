@@ -2,6 +2,9 @@
     // INCLUDES 
     include_once("../Model/DatabaseFacade.php");
 
+    $db = new DatabaseFacade();
+    $db->GetUser("Campa Bernard", "mdpcampan");
+
 ?> 
 <!DOCTYPE html>
 <html>
