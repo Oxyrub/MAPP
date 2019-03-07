@@ -17,23 +17,21 @@
                     <h1 class="header_title">MyMusicDansLaPeau</h1>
                 </div>
             </div>
-            <form>
-                <div class="row designForm">
-                    <div class="offset-sm-2 col-sm-4 connexZone">
+            <div class="row designForm">
+                <div class="offset-sm-2 col-sm-4 connexZone">
+                    <form action="../Controller/connexion.php" method="post">
                         <h3> Connexion </h3>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="conexPseudo" placeholder="Enter pseudo">
+                            <input name="conexPseudo" type="text" class="form-control" id="conexPseudo" placeholder="Enter pseudo">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="conexPassword" placeholder="Password">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="check1">
-                            <label class="form-check-label" for="check1">Check me out</label>
+                            <input name="conexPassword" type="password" class="form-control" id="conexPassword" placeholder="Password">
                         </div>
                         <button type="submit" class="btn btn-primary">Connexion</button>
-                    </div>
-                    <div class="col-sm-4 inscZone">
+                    </form>
+                </div>
+                <div class="col-sm-4 inscZone">
+                    <form action="../Controller/inscription.php" method="post">
                         <h3> Inscription </h3>
                         <div class="form-group">
                             <input type="email" class="form-control" id="inscEmail" placeholder="Email">
@@ -54,9 +52,9 @@
                             <input type="text" class="form-control" id="inscNumber" placeholder="Phone Number">
                         </div>
                         <button type="submit" class="btn btn-primary">Inscription</button>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>    
         
     </body>
