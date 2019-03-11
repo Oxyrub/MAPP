@@ -30,6 +30,10 @@
                         <div class="form-group">
                             <input name="conexPassword" type="password" class="form-control" id="conexPassword" placeholder="Password">
                         </div>
+                        <?php if (isset($_GET['auth'])) {
+                                if ($_GET['auth'] == "false") { ?>
+                                    <p class="failConnex"> Pseudo ou mot de passe incorrect ! </p>
+                        <?php } }  ?>
                         <button type="submit" class="btn btn-primary">Connexion</button>
                     </form>
                 </div>
@@ -37,22 +41,28 @@
                     <form action="../Controller/inscription.php" method="post">
                         <h3> Inscription </h3>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="inscEmail" placeholder="Email">
+                            <label for="" class="col-10">Email*</label>
+                            <input type="email" class="form-control" id="inscEmail" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inscPseudo" placeholder="Pseudo">
+                            <label for="" class="col-10">Pseudo*</label>
+                            <input type="text" class="form-control" id="inscPseudo" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="inscPassword" placeholder="Password">
+                            <label for="" class="col-10">Password*</label>
+                            <input type="password" class="form-control" id="inscPassword" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="inscConfirmPassword" placeholder="Confirm password">
+                            <label for="" class="col-10">Confirm password*</label>
+                            <input type="password" class="form-control" id="inscConfirmPassword"  required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inscNationality" placeholder="Nationality">
+                            <label for="" class="col-10">Date de naissance*</label>
+                            <input type="date" class="form-control" id="inscdateNaiss" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inscNumber" placeholder="Phone Number">
+                            <label for="" class="col-10">Compte Facebook</label>
+                            <input type="text" class="form-control" id="inscFacebook">
                         </div>
                         <button type="submit" class="btn btn-primary">Inscription</button>
                     </form>

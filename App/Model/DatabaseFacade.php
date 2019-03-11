@@ -41,6 +41,16 @@ class DatabaseFacade {
         $preparedStatement = null;
         return $result;       
     }
+
+    // Insert a user with inscription form (return false if no user is found)
+    public function InsertUser($username, $password)
+    {            
+        $preparedStatement = $this->connect()->prepare('INSERT INTO utilisateur VALUES( ?, ?, ?, ?, ?, ?, ?, ? )');
+        $preparedStatement->execute(array($username, $password));   
+        $result = $preparedStatement->fetchObject('User');
+        $preparedStatement = null;
+        return $result;       
+    }
 }    
 
 
