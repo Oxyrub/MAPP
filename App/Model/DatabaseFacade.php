@@ -37,20 +37,50 @@ class DatabaseFacade {
     {            
         $preparedStatement = $this->connect()->prepare('SELECT * FROM utilisateur WHERE uti_username = ? AND uti_password = ?');
         $preparedStatement->execute(array($username, $password));   
-        $result = $preparedStatement->fetchObject('User');
+        $user = $preparedStatement->fetchObject('User');
         $preparedStatement = null;
-        return $result;       
-    }
+        return $user;       
+    }   
 
     // Insert a user with inscription form (return false if no user is found)
-    public function InsertUser($username, $password)
-    {            
-        $preparedStatement = $this->connect()->prepare('INSERT INTO utilisateur VALUES( ?, ?, ?, ?, ?, ?, ?, ? )');
-        $preparedStatement->execute(array($username, $password));   
-        $result = $preparedStatement->fetchObject('User');
+    public function InsertUser($email, $dnaiss, $password, $username, $facebook)
+    {
+        $date = new DateTime();
+        $datestr = $date->format('Y-m-d H:i:s');     
+        
+        $preparedStatement = $this->connect()->prepare("INSERT INTO utilisateur (`uti_email`, `uti_dnai`, `uti_password`,`uti_username`, `uti_dinsc`, `uti_dlastconnect`, `uti_acfacebook`) VALUES( ?, ?, ?, ?, ?, ?, ?)");
+        $user = $preparedStatement->execute(array($email, $dnaiss, $password, $username, $datestr, $datestr, $facebook));
         $preparedStatement = null;
-        return $result;       
+        return $user; 
     }
-}    
 
+    // Delete a user by Id (return true if sucess & false if failed)
+    public function DeleteUser($Id)
+    {
+        $preparedStatement = $this->connect()->prepare("DELETE FROM utilisateur WHERE uti_id = ?");
+        $result = $preparedStatement->execute(array($Id));
+        $preparedStatement = null;
+        return $result;
+    }
 
+    // Update the last connection date field for a given Id (return true if sucess & false if failed)
+    public function UpdateLastConnection($Id)
+    {
+        $date = new DateTime();
+        $datestr = $date->format('Y-m-d H:i:s');
+
+        $preparedStatement = $this->connect()->prepare("UPDATE utilisateur SET uti_dlastconnect = ? WHERE uti_id = ?");
+        $result = $preparedStatement->execute(array($datestr, $Id));
+        $preparedStatement = null;
+        return $result;
+    }
+
+    // Update user information for a given Id (return true if sucess & false if failed)
+    public function UpdateUser($email, $datenai, $password, $username,$Id)
+    {
+        $preparedStatement = $this->connect()->prepare("UPDATE utilisateur SET uti_email = ?, uti_dnai = ?, uti_password = ?, uti_username = ? WHERE uti_id = ?");
+        $result = $preparedStatement->execute(array($email, $datenai, $password, $username,$Id));
+        $preparedStatement = null;
+        return $result;
+    }
+}

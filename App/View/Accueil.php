@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="../Style/Main.css">
+        <link rel="stylesheet" type="text/css" href="../Style/index.css">
     </head>
     <body class="bodyBg">
 

@@ -133,10 +133,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO utilisateur(`uti_id`, `uti_email`, `uti_dnai`, `uti_password`, `uti_username`, `uti_nationality`, `uti_phone`) VALUES
-(1, 'bernard.campan@mondomaine.fr', '1958-04-04', 'mdpcampan', 'Campan Bernard', 'Française', '0655555555'),
-(2, 'didier.bourdon@mondomaine.fr', '1959-01-22', 'mdpbourdon', 'Bourdon, Didier', 'Française', '0699999999'),
-(3, 'pascal.legitimus@mondomaine.fr', '1959-03-13', 'mdplegitimus','Legitimus, Pascal', 'Française', '0633333333');
+INSERT INTO utilisateur(`uti_id`, `uti_email`, `uti_dnai`, `uti_password`, `uti_username`, `uti_dinsc`, `uti_dlastconnect`, `uti_acfacebook`) VALUES
+(1, 'bernard.campan@mondomaine.fr', '1958-04-04', 'mdpcampan', 'Campan Bernard', '2019-03-10', '2019-03-10', ''),
+(2, 'didier.bourdon@mondomaine.fr', '1959-01-22', 'mdpbourdon', 'Bourdon, Didier', '2018-03-10', '2019-03-11', ''),
+(3, 'pascal.legitimus@mondomaine.fr', '1959-03-13', 'mdplegitimus','Legitimus, Pascal', '2017-03-10', '2018-05-22', '');
 
 
 DROP TABLE IF EXISTS `favoris`;

@@ -1,28 +1,24 @@
 <?php
-
     // INCLUDES 
     include_once("../Model/DatabaseFacade.php");
-
-    // print("Connexion OK<br/>");
-
+    include_once("../Model/User.php");
 
     try
     {
         $db = new DatabaseFacade();
-        $result = $db->GetUser($_POST['conexPseudo'], $_POST['conexPassword']);
+        $user = $db->GetUser($_POST['conexPseudo'], $_POST['conexPassword']);
     } catch (PDOException $e) {
         var_dump($e);
     }
 
-    if ($result == false) {
-        // print("Test KO<br/>");
+    if ($user == false) {
         header("Location: ../View/index.php?auth=false");
         exit;
     }
     else {
-        // print("Test OK<br/>");
-        header("Location: ../View/Accueil.php");
-        
+        header("Location: ../View/Accueil.php");  
+        session_start();
+        $_SESSION['user'] = User::ToSession($user); 
         exit;
     }
 ?>
