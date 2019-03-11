@@ -123,8 +123,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `uti_dnai` date NOT NULL,
   `uti_password` varchar(50) NOT NULL,
   `uti_username` varchar(50) NOT NULL,
-  `uti_nationality` varchar(50) NULL,
-  `uti_phone` varchar(15) NULL,
+  `uti_dinsc` date NOT NULL,
+  `uti_dlastconnect` date NULL,
+  `uti_acfacebook` varchar(100) NULL,
   PRIMARY KEY (`uti_id`)
 );
 
