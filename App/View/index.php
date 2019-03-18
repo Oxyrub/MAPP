@@ -19,11 +19,11 @@
                     <form action="../Controller/connexion.php" method="post">
                         <h3> Connexion </h3>
                         <div class="form-group">
-                        <label for="" class="col-10">Pseudo<span class="red"> *</span></label>
+                        <label for="" class="col-10">Pseudo</label>
                             <input name="conexPseudo" type="text" class="form-control" id="conexPseudo" placeholder="Patrick">
                         </div>
                         <div class="form-group">
-                        <label for="" class="col-10">Mot de passe<span class="red"> *</span></label>
+                        <label for="" class="col-10">Mot de passe</span></label>
                             <input name="conexPassword" type="password" class="form-control" id="conexPassword" placeholder="******">
                         </div>
                         <?php if (isset($_GET['auth'])) {

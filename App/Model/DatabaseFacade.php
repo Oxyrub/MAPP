@@ -1,6 +1,7 @@
 <?php
 
 include_once('User.php');
+include_once('Albums.php');
 
 class DatabaseFacade {
 
@@ -82,5 +83,13 @@ class DatabaseFacade {
         $result = $preparedStatement->execute(array($email, $datenai, $password, $username,$Id));
         $preparedStatement = null;
         return $result;
+    }
+
+    public function RetrieveDataList(){
+        $preparedStatement = $this->connect()->prepare('SELECT * FROM albums');
+        $preparedStatement->execute();
+        $list = $preparedStatement->fetchAll();
+        $preparedStatement = null;
+        return $list;
     }
 }
